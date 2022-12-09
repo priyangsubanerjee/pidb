@@ -36,7 +36,7 @@ app.post("/upload", upload.single("file"), async function (req, res, next) {
   res.json({
     success: true,
     message: "File uploaded successfully",
-    url: req.file.location,
+    url: "https://pidb.up.railway.app/v1/" + req.file.key,
     key: req.file.key,
   });
 });
