@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const express = require("express");
 const path = require("path");
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 5589;
 const app = express();
 
 const aws = require("aws-sdk");
@@ -67,6 +67,6 @@ app.get("/v1/:filename", async (req, res) => {
     .pipe(res);
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
