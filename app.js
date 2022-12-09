@@ -5,14 +5,10 @@ const path = require("path");
 const port = process.env.PORT || 5589;
 const app = express();
 const cors = require("cors");
+const bodyParser = require("body-parser");
 
-app.use(
-  cors({
-    origin: "*",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    allowedHeaders: "Content-Type, Authorization, X-Requested-With",
-  })
-);
+app.use(cors());
+app.use(bodyParser.json());
 
 const aws = require("aws-sdk");
 const multer = require("multer");
