@@ -2,12 +2,16 @@ require("dotenv").config();
 
 const express = require("express");
 const path = require("path");
-const port = process.env.PORT || 5589;
+const port = process.env.PORT || 3004;
 const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 app.use(bodyParser.json());
 
 const aws = require("aws-sdk");
